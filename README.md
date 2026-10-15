@@ -8,7 +8,7 @@ Le projet documente les mesures, leurs sources, les chiffrages annoncés et les 
 
 ## État du projet
 
-**Le dépôt est en construction.** Il contient huit dossiers de candidats, une méthode de collecte et 22 guides de vérification par domaine. Une première exploration a été menée pour Jean-Luc Mélenchon ; aucune fiche de mesure n’est encore consolidée et aucune exhaustivité n’est revendiquée. Les sondages justifiant le critère initial d’audience restent à documenter.
+**Le dépôt est en construction.** Il contient huit dossiers de candidats, une méthode de collecte et 22 guides de vérification par domaine. Un rafraîchissement pilote a produit trois fiches pour Jean-Luc Mélenchon (logement, automobile, Smic) et les premières références communes ; aucune exhaustivité n’est revendiquée. Les sondages justifiant le critère initial d’audience restent à documenter.
 
 - [Parcourir les candidats](candidats/README.md)
 - [Comprendre la méthode](METHODOLOGIE.md)

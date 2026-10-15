@@ -3,8 +3,12 @@ id: "reference-a-renseigner"
 organisme: "à renseigner"
 theme: "à renseigner"
 nature: "observation / estimation statistique / prévision / scénario — à préciser"
+domaines: []
+millesime: "à renseigner"
+statut_donnee: "definitive / provisoire / prevision / scenario / estimation — à préciser"
 date_publication: null
 date_consultation: null
+revalider_apres: null
 version: "à renseigner"
 etat_controle: "à contrôler"
 licence_source: "à vérifier"
@@ -40,7 +44,9 @@ licence_source: "à vérifier"
 
 Incertitudes, ruptures de série, limites de comparaison et divergences avec d’autres publications : à documenter.
 
-Mesures utilisant cette référence : à renseigner.
+Fiches utilisant cette référence : ne pas les lister à la main ; elles sont reconstituées dans `sources/references/INDEX.md` par `scripts/indexer_references.py`.
+
+Règle de revalidation : `statut_donnee`, `millesime` et `revalider_apres` ci-dessus. Une donnée définitive d’un millésime clos n’est pas recontrôlée en rafraîchissement normal ; une donnée provisoire l’est à la date indiquée ; un rafraîchissement profond (demande explicite) recontrôle tout.
 
 ## Historique
 

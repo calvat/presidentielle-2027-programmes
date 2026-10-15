@@ -9,7 +9,25 @@ Cette base rassemble des données publiées par des organismes nationaux et inte
 - `organismes.md` : répertoire initial des producteurs à consulter, sans présumer que toutes leurs publications ont été récupérées ou vérifiées.
 - [Repères par domaine](reperes-domaines.md) : points d’entrée institutionnels, utilité et état d’accès lors du repérage pour les guides. Ils ne remplacent pas les références de séries ou publications précises.
 
-La base est initialement vide. Un organisme répertorié ne constitue pas une donnée collectée.
+La base se construit au fil des mesures. Un organisme répertorié ne constitue pas une donnée collectée.
+
+## Principe : un fait externe, une référence
+
+Une donnée ou une analyse extérieure est décrite **une seule fois**, dans `references/`, pour tous les candidats et tous les domaines. Les fiches de mesures y renvoient par identifiant et version et ne recopient pas ses tableaux. Si plusieurs candidats traitent du même sujet (retraites, logement, Smic), ils partagent les mêmes références ; une nouvelle mesure ajoute seulement ce qui manque.
+
+- `references/INDEX.md` : index généré par `python3 scripts/indexer_references.py` (domaines, statut, millésime, date de consultation, date de revalidation, état « à revalider », fiches qui citent chaque référence). Le lire avant toute recherche.
+- `lacunes.md` : recherches infructueuses, accès bloqués et publications d’origine non retrouvées, avec date et date de réessai éventuelle, pour éviter de refaire la même recherche.
+
+## Revalidation
+
+Chaque référence indique `statut_donnee` (`definitive`, `provisoire`, `prevision`, `scenario`, `estimation`), `millesime` et `revalider_apres`. Règles :
+
+- donnée **définitive** d’un millésime clos : pas de recontrôle en rafraîchissement normal ; `revalider_apres: null` ;
+- donnée **provisoire** ou courante : recontrôle à partir de `revalider_apres` (date de la publication attendue ou, à défaut, un an après la consultation) ;
+- **prévision** ou **scénario** : recontrôle quand une nouvelle édition de la publication paraît ou à `revalider_apres` ;
+- **rafraîchissement profond**, uniquement sur demande explicite de l’utilisateur : recontrôle de toutes les références concernées.
+
+Lors d’une révision, créer une nouvelle version de la référence (ou mettre à jour ses valeurs avec l’historique) et signaler les fiches qui la citent.
 
 ## Collecte
 
@@ -25,7 +43,7 @@ Pour chaque valeur : définition, période, territoire, population, unité, prix
 
 Distinguer observations, estimations statistiques, prévisions et scénarios. En cas de différence entre deux organismes, examiner les définitions, méthodes et dates avant de conclure à une contradiction. Ne pas choisir le chiffre le plus favorable à un candidat.
 
-Lors d’une révision, dater la mise à jour et identifier les mesures concernées pour réexaminer leurs comparaisons. Toute fiche de mesure utilisant un indicateur cite l’identifiant de la référence, sa version et la valeur utilisée.
+Lors d’une révision, dater la mise à jour et identifier les mesures concernées pour réexaminer leurs comparaisons. Toute fiche de mesure utilisant un indicateur cite l’identifiant de la référence, sa version et l’indicateur retenu ; la valeur reste dans la référence.
 
 ## Utilisation obligatoire dans les mesures
 

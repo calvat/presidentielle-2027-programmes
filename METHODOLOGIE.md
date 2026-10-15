@@ -112,6 +112,10 @@ Utiliser les identifiants de domaine communs de [l’index des guides](guides/RE
 
 Appliquer CC0 uniquement aux contributions originales sur lesquelles les contributeurs disposent des droits nécessaires. Les documents de tiers sont conservés séparément avec une notice selon `modeles/document-source.md`, lorsque leur redistribution est autorisée ; à défaut, référencer l’original par un lien. Délimiter les extraits et indiquer leurs droits dans chaque fiche. Une adaptation doit être examinée au regard de sa source, même si elle est produite par IA. Les exports conservent ces distinctions et ne sont pas annoncés intégralement sous CC0. Voir `LICENSE.md`.
 
+## Faits externes mutualisés et revalidation
+
+Les données et analyses extérieures sont consignées une seule fois dans `sources/references/`, partagées par tous les candidats, avec un index généré et un registre des recherches infructueuses (`sources/lacunes.md`). Les fiches de mesures renvoient à ces références. Une référence définitive d’un millésime clos n’est pas recontrôlée en rafraîchissement normal ; une référence provisoire l’est à sa date de revalidation ; seul un rafraîchissement profond demandé explicitement par l’utilisateur recontrôle tout. Côté candidat, un registre d’empreintes (`suivi-sources.json`) permet de ne retraiter que les sources modifiées ; son silence ne prouve pas l’absence de changement de fond.
+
 ## Contexte public et confrontation indépendante
 
 La consolidation finale de chaque mesure est précédée d’une recherche documentée de données publiques et d’analyses indépendantes, selon l’étape 4 de `procedures/rafraichir-programme.md`. Réutiliser les références communes contrôlées, puis compléter la base à partir des producteurs pertinents. Les fiches distinguent le contexte public, les estimations indépendantes et la mise en regard avec la déclaration du candidat.

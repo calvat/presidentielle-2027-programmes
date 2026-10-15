@@ -43,7 +43,11 @@ Pages repérées et consultées dans le premier lot ; les dates de publication r
 | [Entrée édition 2025](https://melenchon2027.fr/programme2025/livre/) | Programme antérieur | Contexte et comparaison des versions | 2026-10-15 | Page annonçant une réactualisation ; ne pas attribuer automatiquement à 2027 |
 | [Lettre au peuple de France](https://melenchon2027.fr/lettre-au-peuple-de-france/) | Candidature et orientations | Texte personnel de campagne | 2026-10-15 | Distinguer lettre et programme détaillé |
 | [Discours de Saint-Denis](https://melenchon.fr/2026/06/07/meeting-de-jean-luc-melenchon-a-saint-denis/) | Discours, site personnel | Transcription et propositions exprimées | 2026-10-15 | Transcription consultée ; pas de contrôle audio avec minutage |
-| [Interview pour Centre Presse](https://melenchon.fr/2026/10/09/tout-pouvoir-redoute-les-revoltes-de-la-jeunesse-interview-pour-centre-presse/) | Interview, site personnel | Propositions et précisions dans les réponses | 2026-10-15 | Republication sur le blog ; original du média non consulté |
+| [Interview pour Centre Presse](https://melenchon.fr/2026/10/09/tout-pouvoir-redoute-les-revoltes-de-la-jeunesse-interview-pour-centre-presse/) | Interview, site personnel | Propositions et précisions dans les réponses | 2026-10-15 | Republication sur le blog ; original du média non consulté ; mesures sur les prix et loyers non consolidées |
+| [PDF du plan BTP/logement](https://melenchon2027.fr/wp-content/uploads/2026/09/M-27-PLAN-BTP-LOGEMENT.pdf) | Logement, édition 2027 | Chiffrage détaillé (p. 16) ; source de logement-001 | 2026-10-15 | PDF lu intégralement ; empreinte dans `suivi-sources.json` |
+| [PDF du plan Automobile](https://melenchon2027.fr/wp-content/uploads/2026/10/PLAN-AUTO_Vf_ST.pdf) | Industrie, transports, édition 2027 | Objectifs et tableau (p. 10-11, 23) ; source de industrie-001 | 2026-10-15 | PDF lu en partie ; empreinte dans `suivi-sources.json` |
+
+Le registre machine [`suivi-sources.json`](suivi-sources.json) (URL, empreinte du texte ou des octets, dernier contrôle) sert à `scripts/verifier_sources.py` : au prochain rafraîchissement, seules les sources modifiées, nouvelles ou inaccessibles sont retraitées. L’empreinte d’une page peut changer sans modification de fond ; l’absence de changement détecté ne prouve pas l’identité du contenu.
 
 Le site de campagne renvoie à `melenchon.fr` comme blog de Jean-Luc Mélenchon et à `lafranceinsoumise.fr` comme site de sa formation. Ces domaines constituent des sources distinctes avec leurs propres droits. Les deux liens historiques « livrets 2022 » (`?page_id=1790`) et « plans 2022 » (`?page_id=2006`) ont renvoyé une erreur 404 lors du premier lot : ne pas les considérer comme consultés ni conclure à un abandon des propositions.
 
@@ -51,14 +55,15 @@ Le site de campagne renvoie à `melenchon.fr` comme blog de Jean-Luc Mélenchon 
 
 Lot collecté le 15 octobre 2026 par deux agents Luna : programme et plans (ruralités, BTP/logement, automobile), annonces et lettre de candidature, discours et interview. Les notes sont dans `_travail/collectes/`, ignoré par Git, avec manifeste et limites de consultation. Il s’agit de notes et d’extraits, pas d’une archive intégrale.
 
-La collecte est partielle, la consolidation n’a pas commencé. Les documents anciens restent distingués du programme 2027 ; les vidéos non visionnées ne constituent pas des propos contrôlés. Les sources précises seront publiées dans les fiches lors de leur consolidation.
+La collecte est partielle ; la consolidation est partielle (trois mesures, voir ci-dessous). Les documents anciens restent distingués du programme 2027 ; les vidéos non visionnées ne constituent pas des propos contrôlés. Les sources précises seront publiées dans les fiches lors de leur consolidation.
 
 ## Couverture
 
 - Collecte initiale : page d’accueil, présentation du programme et mentions légales consultées le 15 octobre 2026.
-- Aucune fiche de mesure extraite à ce stade ; aucune exhaustivité revendiquée.
+- Trois fiches de mesure consolidées le 2026-10-15 lors d’un rafraîchissement pilote (plans BTP/logement et Automobile, discours de Saint-Denis) ; aucune exhaustivité revendiquée. D’autres éléments collectés (rénovation de 700 000 logements, chaudières, location abordable, batteries, interview sur le blocage des prix, Sécurité sociale intégrale) ne sont pas encore des fiches : leur absence ne signifie pas une absence de proposition.
 - Le site propose aussi des documents d’élections ou éditions antérieures : vérifier la date et la reprise explicite pour 2027 avant toute attribution.
-- Le texte intégral du livre-programme et les documents thématiques n’ont pas encore été examinés.
+- Le livre-programme 2027 est annoncé pour le 6 novembre 2026 selon le site : non disponible lors de la consultation. Les documents thématiques autres que ruralités, BTP/logement et automobile n’ont pas été examinés.
+- Critère d’audience (sondage) : à documenter.
 
 Corpus produit et contrôlé par IA, sans relecture humaine. Les chiffres attribués au candidat ne sont pas vérifiés par défaut.
 
@@ -66,8 +71,11 @@ Corpus produit et contrôlé par IA, sans relecture humaine. Les chiffres attrib
 
 | Identifiant | Domaine principal | Mini-description factuelle | Statut | Première observation | Dernière observation | Fiche |
 | --- | --- | --- | --- | --- | --- | --- |
+| logement-001 | Logement | Objectif de 400 000 logements abordables par an, dont 200 000 publics, dans le plan BTP/logement ; chiffrage annoncé non vérifié | documentée | 2026-10-15 | 2026-10-15 | [logement-001](mesures/logement-001.md) |
+| industrie-001 | Industrie, entreprises et commerce | Objectif de 2 millions de véhicules électriques produits en France par an d’ici 2032, dans le plan Automobile ; chiffrage annoncé non vérifié | documentée | 2026-10-15 | 2026-10-15 | [industrie-001](mesures/industrie-001.md) |
+| emploi-001 | Emploi, salaires et pouvoir d’achat | Annonce d’un Smic à 1 700 euros dans le discours de Saint-Denis du 2026-06-07 ; brut ou net non précisé | documentée | 2026-10-15 | 2026-10-15 | [emploi-001](mesures/emploi-001.md) |
 
-Aucune mesure documentée pour le moment. Cette absence ne signifie pas une absence de propositions.
+Trois mesures seulement sont documentées à ce stade. Cette limite ne signifie pas une absence de propositions.
 
 ## Rafraîchissement et espace de travail
 

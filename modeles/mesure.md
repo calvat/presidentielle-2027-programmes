@@ -31,7 +31,7 @@ Nature : proposition personnelle / programme de parti / position antérieure —
 
 - Première observation par le projet : à renseigner, avec source et date de consultation.
 - Dernière observation confirmant la présence ou la réaffirmation : à renseigner, avec source et date de consultation.
-- Dernier contrôle de présence : à renseigner, avec résultat ; ne pas actualiser la dernière observation si la mesure n’a pas été retrouvée.
+- Dernier contrôle de présence : à renseigner, avec résultat ; ne pas actualiser la dernière observation si la mesure n’a pas été retrouvée. Si `scripts/verifier_sources.py` a signalé la source inchangée, noter « source inchangée au contrôle du AAAA-MM-JJ » sans refaire l’extraction.
 - Statut : documentée / retrait explicite / remplacée / non retrouvée lors du dernier contrôle / statut incertain.
 - Date du changement de statut et date effective du retrait si connue : à renseigner séparément.
 - Preuve du retrait ou du remplacement : source précise, extrait ou repère ; sinon indiquer que l’abandon n’est pas établi.
@@ -77,22 +77,22 @@ L’absence de chiffrage documenté ne signifie pas un coût nul.
 
 ## Données publiques sur le sujet
 
-Présenter la situation observée et les indicateurs pertinents, séparément du chiffrage et des objectifs du candidat. Consulter la base commune et les producteurs de référence avant de finaliser cette section.
+Lister les références communes de `sources/references/` utilisées, sans recopier leurs valeurs : elles sont mutualisées entre candidats et mises à jour à un seul endroit. Consulter d’abord `sources/references/INDEX.md` et `sources/lacunes.md`.
 
-| Indicateur et définition | Valeur et unité | Période et périmètre | Organisme, référence du dépôt et source originale | Version et nature de la donnée | Limites |
-| --- | --- | --- | --- | --- | --- |
+| Référence (identifiant et version) | Indicateur utilisé | Question à laquelle elle répond | Réutilisée sans recontrôle ou contrôlée le |
+| --- | --- | --- | --- |
 
-Pour chaque donnée, préciser le caractère observé, estimé, prévisionnel ou scénarisé, les révisions éventuelles et la date de consultation. Une statistique de contexte ne démontre pas le coût ou l’effet de la proposition.
+Une valeur n’est rappelée dans la fiche que si la comparaison l’exige ; elle porte alors l’identifiant et la version de sa référence. Une statistique de contexte ne démontre pas le coût ou l’effet de la proposition.
 
-Si aucune donnée pertinente n’est trouvée après recherche, le dire explicitement et décrire les organismes et publications consultés, les dates et les limites. Ne pas remplir le tableau avec un indicateur sans rapport direct pour donner une apparence de vérification.
+Si aucune donnée pertinente n’est trouvée après recherche, le dire explicitement, renvoyer à l’entrée correspondante de `sources/lacunes.md` et décrire les organismes et publications consultés. Ne pas remplir le tableau avec un indicateur sans rapport direct pour donner une apparence de vérification.
 
 ## Analyses et estimations indépendantes
 
-Pour chaque analyse pertinente : affirmation examinée, résultat ou estimation, auteur ou organisme, lien vers la référence du dépôt et la publication originale, date, méthode, hypothèses, indépendance et limites. Distinguer une estimation d’un résultat observé. Signaler si aucune évaluation indépendante de la mesure n’a été trouvée après recherche.
+Pour chaque analyse pertinente : renvoyer à sa référence commune (auteur, méthode, hypothèses, indépendance et limites s’y trouvent), indiquer l’affirmation examinée et le résultat utilisé. Distinguer une estimation d’un résultat observé. Signaler si aucune évaluation indépendante de la mesure n’a été trouvée après recherche.
 
 ## Mise en regard avec les déclarations du candidat
 
-| Affirmation ou chiffre du candidat et source | Donnée ou estimation indépendante et source | Comparabilité | Ce que les éléments permettent d’établir | Ce qui reste indéterminé |
+| Affirmation ou chiffre du candidat et source | Donnée ou estimation indépendante (référence et version) | Comparabilité | Ce que les éléments permettent d’établir | Ce qui reste indéterminé |
 | --- | --- | --- | --- | --- |
 
 Ne pas forcer une comparaison de grandeurs incompatibles. Distinguer un contexte descriptif, une corroboration d’un fait précis et une évaluation des effets futurs. Tout calcul de l’agent indique ses entrées, sa formule et ses hypothèses. Sans base suffisante, conserver le chiffrage candidat comme non vérifié.

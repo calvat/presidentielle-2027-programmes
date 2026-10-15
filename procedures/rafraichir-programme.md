@@ -32,6 +32,17 @@ Privilégier les modèles modestes pour découvrir les liens, collecter, extrair
 
 Affecter par défaut un agent modeste par candidat, responsable du cycle complet. Si une collecte parallèle est utile, limiter initialement à deux collecteurs pour ce même candidat, sur des lots disjoints, puis confier la consolidation à son unique responsable. Ne pas faire lire le site entier par chaque agent. Le coordinateur réutilise leurs bilans plutôt que reprendre toute l’exploration.
 
+### Travaux techniques délégables
+
+Distinguer l’**agent de gestion** (modèle moyen, un seul candidat, jugement : choix des sources, lecture des extractions, décisions de consolidation, rédaction des fiches) des **exécutants techniques** (modèle le plus économique disponible, plusieurs en parallèle, éventuellement partagés entre candidats) qui reçoivent une consigne fermée et ne tranchent rien :
+
+- téléchargement d’URL listées, empreintes, métadonnées d’accès (en-têtes, dates, statut) ;
+- extraction du texte de PDF ou de pages en **texte verbatim** avec repères (URL, page, empreinte), jamais en résumé ;
+- mise en forme et retraitement purement techniques (nettoyage, conversion, découpage par page ou rubrique) ;
+- récupération de séries ou tableaux institutionnels selon des paramètres fixés par le gestionnaire.
+
+Règles : préférer un script déterministe à un exécutant (`scripts/verifier_sources.py` en est un) ; chaque exécutant écrit dans un sous-dossier disjoint de la session et ne lit que les chemins de sa consigne ; il ne sélectionne, n’interprète ni ne résume. L’isolation par candidat vise le contenu : un exécutant technique sans contenu à interpréter peut traiter des lots de plusieurs candidats, à condition de ne mélanger ni leurs dossiers ni leurs sessions. Le gestionnaire ne cite que depuis le texte verbatim conservé, et contrôle que chaque extrait cité y figure ; un résumé produit par un outil ou un agent ne constitue pas une source. Le gestionnaire reste responsable du résultat.
+
 Réserver une éventuelle escalade de modèle aux difficultés précises et non résolues. Ne pas lancer automatiquement un modèle plus coûteux pour l’ensemble du site. Identifier d’abord ce qui manque et réduire le lot ou laisser le point explicitement incertain.
 
 ## 1. Préparer une session locale
@@ -49,6 +60,22 @@ Si Python ou les données de fuseau nécessaires ne sont pas disponibles, signal
 Renseigner dans le manifeste `agent_responsable`, `agents` (identifiant, candidat unique, rôle et sous-dossier) et `fichiers_modifies`. Enregistrer l’état initial des fichiers du candidat pour distinguer les changements de cette session des changements préexistants.
 
 Lire la dernière session locale et les fiches existantes avant de naviguer. Dans un nouveau clone, les bruts sont absents : reconstruire la collecte depuis les sources publiques et les références des fiches ; ne pas prendre cette absence locale pour un retrait de mesure.
+
+## 1 bis. Détecter ce qui a changé
+
+Avant de naviguer, lancer depuis la racine :
+
+```sh
+python3 scripts/verifier_sources.py jean-luc-melenchon
+```
+
+Le script lit `candidats/<identifiant>/suivi-sources.json`, récupère chaque URL, normalise le texte visible, compare son empreinte à celle du registre et classe chaque source : `inchangee`, `modifiee`, `nouvelle` (absente du registre), `inaccessible`. Il n’écrit dans le registre qu’avec `--ecrire`, après examen. Utiliser le résultat ainsi :
+
+- `inchangee` : ne pas relire ni réextraire ; mettre à jour `dernier_controle_presence` des mesures qui s’appuient sur cette source et consigner « source inchangée à la date du contrôle » dans leur historique.
+- `modifiee` : réextraire seulement cette source, comparer à l’extraction précédente et ne retravailler (recherche indépendante comprise) que les mesures dont le contenu change.
+- `nouvelle` ou `inaccessible` : traiter comme dans la section 2 ; une page inaccessible ne prouve aucun retrait.
+
+Limites à rappeler dans le bilan : l’empreinte du texte visible peut changer sans modification de fond (bandeaux, dates, listes d’articles) et ne change pas lorsque le contenu est servi dynamiquement ou dans un PDF non relu ; l’absence de changement détectée n’est pas une preuve d’identité. Les index de rubriques restent contrôlés pour repérer de nouveaux documents. Sans accès réseau, signaler que la détection n’a pas pu être faite.
 
 ## 2. Collecter avant de consolider
 
@@ -84,6 +111,16 @@ Lire `guides/README.md`, le socle commun et les guides correspondant au domaine 
 
 Créer un relevé par mesure selon `modeles/controle-domaines.md` dans `consolidation/controles-domaines/`, avec candidat unique, identifiant de mesure ou d’extraction, guides, versions et date. Recenser les identifiants attendus du socle et des guides chargés. Traduire chacun en question concrète pour la proposition ; justifier les cas non applicables. Ce relevé guide les recherches ci-dessous.
 
+### 4.1 bis. Réutiliser avant de rechercher
+
+Les faits externes sont mutualisés : `sources/references/` contient une référence par série ou publication, utilisée par tous les candidats. Avant toute recherche :
+
+1. Lire `sources/references/INDEX.md` (références par domaine, statut, date de consultation, date de revalidation, fiches qui les citent) et `sources/lacunes.md` (recherches infructueuses et accès bloqués déjà documentés).
+2. Réutiliser une référence existante si son indicateur, son périmètre et son millésime conviennent. Ne pas refaire une recherche déjà consignée dans `lacunes.md` sauf si sa date de réessai est atteinte ou si l’utilisateur demande un rafraîchissement profond.
+3. Ne **pas** revérifier une référence dont la donnée est définitive, ni dont `revalider_apres` est postérieure à la date du jour. Revérifier une référence provisoire seulement lorsque sa date de revalidation est échue ou qu’une révision est connue. Consigner dans le bilan « référence réutilisée sans recontrôle » avec sa date de dernière consultation.
+4. Ne créer une nouvelle référence que pour une donnée absente ; la rédiger selon `modeles/reference.md`, avec ses champs de revalidation, puis régénérer l’index avec `python3 scripts/indexer_references.py`. Ne jamais recopier une valeur de référence dans une fiche : renvoyer à la référence (identifiant, version, indicateur). Ajouter à `lacunes.md` toute recherche qui n’a rien donné ou dont l’accès est bloqué.
+5. Un **rafraîchissement profond** (demande explicite : « rafraîchissement profond », « revérifie toutes les données ») recontrôle chaque référence concernée dans sa publication d’origine, met à jour version et date de consultation, et signale les révisions et leur effet sur les fiches qui les citent.
+
 ### 4.2. Chercher, comparer et enregistrer les preuves
 
 1. Identifier les affirmations chiffrées du candidat, les grandeurs utiles au sujet et les questions auxquelles des données publiques peuvent répondre : situation actuelle, population concernée, dépenses existantes, tendances, comparaisons pertinentes. Distinguer ce contexte d’une évaluation du coût ou des effets futurs de la mesure.
@@ -94,7 +131,7 @@ Créer un relevé par mesure selon `modeles/controle-domaines.md` dans `consolid
 
 Consigner dans `consolidation/recherche-independante.json` une entrée par mesure ou élément candidat : `candidat`, `mesure_id` ou identifiant d’extraction, `questions`, `affirmations_candidat`, `references_repo_consultees`, `recherches_effectuees` (organisme, URL ou requête et date), `references_retenues`, `comparabilite`, `limites`, `controles_domaines` (chemin du relevé local, guides et versions) et `resultat` (`donnees_trouvees`, `donnees_partielles`, `aucune_donnee_pertinente_trouvee` ou `recherche_incomplete`). Lier ce bilan aux décisions de consolidation. Une recherche infructueuse ne doit pas être remplacée par un champ « à renseigner » sans tentative documentée.
 
-Préparer les nouvelles références selon `modeles/reference.md` dans la session locale. Les faire intégrer séquentiellement à `sources/references/` par le coordinateur, ou par le responsable du candidat si son mandat lui réserve explicitement cette écriture commune. Avant de publier une fiche, vérifier que ses liens vers les références du dépôt existent réellement. Conserver aussi les URL originales et les versions dans la fiche ; les éléments probants ne doivent pas dépendre du dossier ignoré.
+Préparer les nouvelles références selon `modeles/reference.md` dans la session locale. Les faire intégrer séquentiellement à `sources/references/` par le coordinateur, ou par le responsable du candidat si son mandat lui réserve explicitement cette écriture commune. Avant de publier une fiche, vérifier que ses liens vers les références du dépôt existent réellement. La fiche renvoie à ces références (identifiant, version, indicateur) au lieu de recopier leurs valeurs ; l’URL d’origine et la version restent dans la référence, qui est publique : les éléments probants ne dépendent pas du dossier ignoré.
 
 Renseigner chaque contrôle du relevé avec `documente`, `non_trouve`, `non_applicable` justifié ou `a_completer`, en liant les preuves et recherches. Vérifier la présence de tous les identifiants attendus, sans doublon. Un contrôle documenté peut constater une incertitude ou une absence de paramètre ; il ne valide pas le chiffrage du candidat.
 

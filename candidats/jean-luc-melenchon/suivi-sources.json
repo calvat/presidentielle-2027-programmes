@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "candidat": "jean-luc-melenchon",
+  "sources": [
+    {
+      "url": "https://melenchon2027.fr/programme/decouvrir/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "03e99b0e99d9051a6f6a9e0536afddea18c83febca0c50ec56252e5f5b6b0f54",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon2027.fr/programme/plans-thematiques/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "1589aced8c2ed194e0fc9314cd740851b0b2f00c8940db3d662dc95c2c6869ea",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon2027.fr/programme/plans-thematiques/ruralite/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "f1a8ed8f43e2ae495e09dad6b8ca978d1c4fa22385f2d984e95d4f1c3ff50755",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon2027.fr/programme/plans-investissement/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "017601dbb0dc4006c1f6c41e49212f83e364fb678e759ec9d6c5dc4a5513c257",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon2027.fr/programme/plans-investissement/btp-logement/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "7f9e7e7bec67adcfbe4baef465b4793fd0ecd9509ecdb3ff2f76116eb47af9c9",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon2027.fr/programme/plans-investissement/automobile/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "d506573046f96e5f1b66b6e9107ad8981f1276f78f5b6d9b7ee4ed5fbfd8b8b2",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon2027.fr/comment-a-ete-concu-le-programme/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "9fcb90a0e3af0c08518e3956f140685d4ac4d4cb0d3c042d64ee9042217c909d",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon2027.fr/lettre-au-peuple-de-france/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "2e812ebe9dfc3d690e7471da629c7a567ce3c15ab60d4ef671780bcb88908e1f",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon.fr/2026/06/07/meeting-de-jean-luc-melenchon-a-saint-denis/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "f316fa1de7e82d1d043bf2312465708657ff3b6005ba87de7a6f795550a03bca",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon.fr/2026/10/09/tout-pouvoir-redoute-les-revoltes-de-la-jeunesse-interview-pour-centre-presse/",
+      "type": "html",
+      "titre": null,
+      "empreinte": "7c3395a56e2a5794213aabb7da8ae50d155698e87599a1fb6e4bdc7f4dcf829e",
+      "etag": null,
+      "last_modified": null,
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "texte"
+    },
+    {
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/09/M-27-PLAN-BTP-LOGEMENT.pdf",
+      "type": "pdf",
+      "titre": null,
+      "empreinte": "39c0f0e8207a9aebc966cdfa9cbac99ed6e0217c987e13f59c24798474fd7874",
+      "etag": "\"6aba64de-1675a2f\"",
+      "last_modified": "Mon, 28 Sep 2026 13:00:14 GMT",
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "octets"
+    },
+    {
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/10/PLAN-AUTO_Vf_ST.pdf",
+      "type": "pdf",
+      "titre": null,
+      "empreinte": "c97c3dbd8a49e04f18a23c73cf04d49fb14b4fd3083563abc6e83aa92177441c",
+      "etag": "\"6acf728a-1509e68\"",
+      "last_modified": "Wed, 14 Oct 2026 12:16:10 GMT",
+      "dernier_controle": "2026-10-15",
+      "nature_empreinte": "octets"
+    }
+  ]
+}
