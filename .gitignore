@@ -1,0 +1,5 @@
+.DS_Store
+
+# Collectes locales propres à chaque candidat : jamais versionnées.
+/candidats/*/_travail/
+__pycache__/
