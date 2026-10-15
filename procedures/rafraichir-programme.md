@@ -116,6 +116,18 @@ Les faits externes sont mutualisés : `sources/references/` contient une référ
 4. Ne créer une nouvelle référence que pour une donnée absente ; la rédiger selon `modeles/reference.md`, avec ses champs de revalidation, puis régénérer l’index avec `python3 scripts/indexer_references.py`. Ne jamais recopier une valeur de référence dans une fiche : renvoyer à la référence (identifiant, version, indicateur). Ajouter à `lacunes.md` toute recherche qui n’a rien donné ou dont l’accès est bloqué.
 5. Un **rafraîchissement profond** (demande explicite : « rafraîchissement profond », « revérifie toutes les données ») recontrôle chaque référence concernée dans sa publication d’origine, met à jour version et date de consultation, et signale les révisions et leur effet sur les fiches qui les citent.
 
+### 4.1 ter. Plafonner la recherche
+
+La recherche indépendante est **bornée** : elle sert à rendre une mesure compréhensible et comparable, pas à épuiser le sujet. Repères indicatifs, à respecter sauf difficulté documentée :
+
+- environ 6 requêtes et 4 publications ouvertes par mesure, hors références réutilisées ; les mesures voisines partagent leurs références, ce qui ne compte qu’une fois ;
+- par question de contrôle : une requête, une reformulation, puis `non_trouve` avec la ligne correspondante dans `sources/lacunes.md` ; ne pas poursuivre au-delà ;
+- priorité aux données qui modifient une comparaison avec la déclaration du candidat ; renoncer aux détails secondaires, aux millésimes antérieurs sans usage et aux contre-vérifications d’un fait déjà établi par une source primaire ;
+- une publication d’origine inaccessible ou protégée n’appelle pas de contournement : l’inscrire dans `lacunes.md` et passer ;
+- au-delà du plafond, ou dès que les contrôles sont tous traités (`documente`, `non_trouve` ou `non_applicable`), arrêter, consigner la recherche comme partielle si besoin et rendre compte.
+
+Ces plafonds protègent contre les recherches sans fin ; ils n’autorisent pas à déclarer documenté un contrôle non mené (voir `a_completer`).
+
 ### 4.2. Chercher, comparer et enregistrer les preuves
 
 1. Identifier les affirmations chiffrées du candidat, les grandeurs utiles au sujet et les questions auxquelles des données publiques peuvent répondre : situation actuelle, population concernée, dépenses existantes, tendances, comparaisons pertinentes. Distinguer ce contexte d’une évaluation du coût ou des effets futurs de la mesure.

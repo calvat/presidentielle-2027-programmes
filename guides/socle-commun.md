@@ -17,7 +17,7 @@ Version : 2026-10-15. À appliquer à chaque mesure avec les guides pertinents d
 
 ## Coût de la recherche
 
-Commencer par les références communes réutilisables et quelques indicateurs directement liés à la proposition. Charger un guide supplémentaire seulement lorsqu’un effet ou un financement le justifie. Une fois les questions couvertes ou leur absence de réponse documentée, arrêter l’exploration ; ne pas chercher toujours plus de chiffres pour remplir les tableaux.
+Appliquer le plafond de recherche de `procedures/rafraichir-programme.md` (4.1 ter) : recherche bornée, une requête et une reformulation par question, puis `non_trouve`. Commencer par les références communes réutilisables et quelques indicateurs directement liés à la proposition. Charger un guide supplémentaire seulement lorsqu’un effet ou un financement le justifie. Une fois les questions couvertes ou leur absence de réponse documentée, arrêter l’exploration ; ne pas chercher toujours plus de chiffres pour remplir les tableaux.
 
 Pour une mesure essentiellement institutionnelle ou portant sur un droit, les textes et procédures peuvent être les références pertinentes. Ne pas inventer un chiffrage pour satisfaire une grille quantitative. Justifier les contrôles sans objet. Une recherche déjà menée peut être réutilisée si le périmètre, la version et l’actualité sont vérifiés et la réutilisation tracée.
 

@@ -49,4 +49,5 @@ Revalidation : statut provisoire ; la page annonce une révision à la publicati
 
 ## Historique
 
+- 2026-10-15 : la page `insee-pib-t2-2026` (Informations rapides n° 212, 2026-08-28) indique que les comptes annuels 2025 ont été actualisés et que le solde public reste à −5,1 % du PIB (révision de +0,9 Md€) ; la dette révisée n’a pas été lue.
 - 2026-10-15 : première collecte pour le rafraîchissement du programme de Jean-Luc Mélenchon (session locale 20261015T220400-588532+0200).

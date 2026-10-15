@@ -60,7 +60,7 @@ La collecte est partielle ; la consolidation est partielle (trois mesures, voir 
 ## Couverture
 
 - Collecte initiale : page d’accueil, présentation du programme et mentions légales consultées le 15 octobre 2026.
-- Trois fiches de mesure consolidées le 2026-10-15 lors d’un rafraîchissement pilote (plans BTP/logement et Automobile, discours de Saint-Denis) ; aucune exhaustivité revendiquée. D’autres éléments collectés (rénovation de 700 000 logements, chaudières, location abordable, batteries, interview sur le blocage des prix, Sécurité sociale intégrale) ne sont pas encore des fiches : leur absence ne signifie pas une absence de proposition.
+- Sept fiches de mesure consolidées le 2026-10-15 en deux lots (plans BTP/logement et Automobile, discours de Saint-Denis, interview Centre Presse, article du 2026-10-15) ; aucune exhaustivité revendiquée. Éléments repérés ou collectés mais non consolidés : sortie du fioul et du gaz, confort d’été, location abordable, batteries et Fonds Avenir Automobile, seuils d’achat de véhicules électriques des entreprises, Sécurité sociale intégrale, démembrement des groupes médiatiques, Sixième République, office pour l’autonomie des jeunes, réorientation de l’épargne, allocation jeunes, plan Ruralités. Leur absence ne signifie pas une absence de proposition.
 - Le site propose aussi des documents d’élections ou éditions antérieures : vérifier la date et la reprise explicite pour 2027 avant toute attribution.
 - Le livre-programme 2027 est annoncé pour le 6 novembre 2026 selon le site : non disponible lors de la consultation. Les documents thématiques autres que ruralités, BTP/logement et automobile n’ont pas été examinés.
 - Critère d’audience (sondage) : à documenter.
@@ -74,8 +74,12 @@ Corpus produit et contrôlé par IA, sans relecture humaine. Les chiffres attrib
 | logement-001 | Logement | Objectif de 400 000 logements abordables par an, dont 200 000 publics, dans le plan BTP/logement ; chiffrage annoncé non vérifié | documentée | 2026-10-15 | 2026-10-15 | [logement-001](mesures/logement-001.md) |
 | industrie-001 | Industrie, entreprises et commerce | Objectif de 2 millions de véhicules électriques produits en France par an d’ici 2032, dans le plan Automobile ; chiffrage annoncé non vérifié | documentée | 2026-10-15 | 2026-10-15 | [industrie-001](mesures/industrie-001.md) |
 | emploi-001 | Emploi, salaires et pouvoir d’achat | Annonce d’un Smic à 1 700 euros dans le discours de Saint-Denis du 2026-06-07 ; brut ou net non précisé | documentée | 2026-10-15 | 2026-10-15 | [emploi-001](mesures/emploi-001.md) |
+| logement-002 | Logement | Objectif d’au moins 700 000 isolations de qualité de logements par an, avec appui public de 100 % pour les plus modestes, dans le plan BTP/logement ; chiffrage annoncé non vérifié | documentée | 2026-10-15 | 2026-10-15 | [logement-002](mesures/logement-002.md) |
+| emploi-002 | Emploi, salaires et pouvoir d’achat | « État d’urgence sociale » proposé en interview : blocage des prix, gel des loyers et des prix des carburants, de l’électricité et du gaz, négociations salariales obligatoires, blocage des marges ; sans durée ni financement | documentée | 2026-10-15 | 2026-10-15 | [emploi-002](mesures/emploi-002.md) |
+| retraites-001 | Retraites | But déclaré dans le discours de Saint-Denis : abroger la réforme des retraites à 64 ans puis revenir à 60 ans ; sans calendrier ni chiffrage | documentée | 2026-10-15 | 2026-10-15 | [retraites-001](mesures/retraites-001.md) |
+| finances-publiques-001 | Finances publiques et fiscalité | Annulation (« trait à tirer ») de la dette française détenue par la BCE, dans un article du blog du 2026-10-15 ; montant et mécanisme non précisés | documentée | 2026-10-15 | 2026-10-15 | [finances-publiques-001](mesures/finances-publiques-001.md) |
 
-Trois mesures seulement sont documentées à ce stade. Cette limite ne signifie pas une absence de propositions.
+Sept mesures seulement sont documentées à ce stade. Cette limite ne signifie pas une absence de propositions.
 
 ## Rafraîchissement et espace de travail
 
