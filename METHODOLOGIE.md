@@ -114,7 +114,7 @@ Appliquer CC0 uniquement aux contributions originales sur lesquelles les contrib
 
 ## Faits externes mutualisés et revalidation
 
-Les données et analyses extérieures sont consignées une seule fois dans `sources/references/`, partagées par tous les candidats, avec un index généré et un registre des recherches infructueuses (`sources/lacunes.md`). Les fiches de mesures renvoient à ces références. Une référence définitive d’un millésime clos n’est pas recontrôlée en rafraîchissement normal ; une référence provisoire l’est à sa date de revalidation ; seul un rafraîchissement profond demandé explicitement par l’utilisateur recontrôle tout. Côté candidat, un registre d’empreintes (`suivi-sources.json`) permet de ne retraiter que les sources modifiées ; son silence ne prouve pas l’absence de changement de fond.
+Les données et analyses extérieures sont consignées une seule fois dans `sources/references/`, partagées par tous les candidats, avec un index généré et un registre des recherches infructueuses (`sources/lacunes.md`). Les fiches de mesures renvoient à ces références. Une référence définitive d’un millésime clos n’est pas recontrôlée en rafraîchissement normal ; une référence provisoire l’est à sa date de revalidation ; seul un rafraîchissement profond demandé explicitement par l’utilisateur recontrôle tout. Côté candidat, l’agent de gestion relit les sources des mesures existantes et juge si leur contenu a changé de façon marginale (simple mise à jour du contrôle de présence) ou de fond (mise à jour de la fiche et recherche limitée aux éléments touchés) ; ce jugement est motivé dans l’historique de la fiche.
 
 ## Contexte public et confrontation indépendante
 

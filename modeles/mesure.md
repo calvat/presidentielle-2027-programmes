@@ -31,7 +31,7 @@ Nature : proposition personnelle / programme de parti / position antérieure —
 
 - Première observation par le projet : à renseigner, avec source et date de consultation.
 - Dernière observation confirmant la présence ou la réaffirmation : à renseigner, avec source et date de consultation.
-- Dernier contrôle de présence : à renseigner, avec résultat ; ne pas actualiser la dernière observation si la mesure n’a pas été retrouvée. Si `scripts/verifier_sources.py` a signalé la source inchangée, noter « source inchangée au contrôle du AAAA-MM-JJ » sans refaire l’extraction.
+- Dernier contrôle de présence : à renseigner, avec résultat ; ne pas actualiser la dernière observation si la mesure n’a pas été retrouvée. Si la source relue est inchangée ou ne change que marginalement, noter dans l’historique « contrôle du AAAA-MM-JJ : inchangée » ou « changement marginal » avec une phrase de justification, sans refaire l’extraction ni la recherche.
 - Statut : documentée / retrait explicite / remplacée / non retrouvée lors du dernier contrôle / statut incertain.
 - Date du changement de statut et date effective du retrait si connue : à renseigner séparément.
 - Preuve du retrait ou du remplacement : source précise, extrait ou repère ; sinon indiquer que l’abandon n’est pas établi.

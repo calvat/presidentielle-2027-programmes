@@ -39,7 +39,7 @@ Nature : proposition de parti (La France insoumise), plan d’investissement de 
 
 - Première observation par le projet : 2026-10-15, plan consulté en HTML et en PDF.
 - Dernière observation confirmant la présence : 2026-10-15.
-- Dernier contrôle de présence : 2026-10-15 ; mesure retrouvée ; PDF et page HTML enregistrés dans `candidats/jean-luc-melenchon/suivi-sources.json`.
+- Dernier contrôle de présence : 2026-10-15 ; mesure retrouvée ; PDF et page HTML relus.
 - Statut : documentée.
 - Date de première annonce : non établie. L’en-tête HTTP `Last-Modified` du PDF indique le 2026-10-14 (indice technique, pas une date d’annonce).
 - Éditions antérieures du programme (2025, 2022) non lues ici : non attribuées à 2027.

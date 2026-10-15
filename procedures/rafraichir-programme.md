@@ -36,12 +36,12 @@ Affecter par défaut un agent modeste par candidat, responsable du cycle complet
 
 Distinguer l’**agent de gestion** (modèle moyen, un seul candidat, jugement : choix des sources, lecture des extractions, décisions de consolidation, rédaction des fiches) des **exécutants techniques** (modèle le plus économique disponible, plusieurs en parallèle, éventuellement partagés entre candidats) qui reçoivent une consigne fermée et ne tranchent rien :
 
-- téléchargement d’URL listées, empreintes, métadonnées d’accès (en-têtes, dates, statut) ;
-- extraction du texte de PDF ou de pages en **texte verbatim** avec repères (URL, page, empreinte), jamais en résumé ;
+- téléchargement d’URL listées, métadonnées d’accès (en-têtes, dates, statut) ;
+- extraction du texte de PDF ou de pages en **texte verbatim** avec repères (URL, page), jamais en résumé ;
 - mise en forme et retraitement purement techniques (nettoyage, conversion, découpage par page ou rubrique) ;
 - récupération de séries ou tableaux institutionnels selon des paramètres fixés par le gestionnaire.
 
-Règles : préférer un script déterministe à un exécutant (`scripts/verifier_sources.py` en est un) ; chaque exécutant écrit dans un sous-dossier disjoint de la session et ne lit que les chemins de sa consigne ; il ne sélectionne, n’interprète ni ne résume. L’isolation par candidat vise le contenu : un exécutant technique sans contenu à interpréter peut traiter des lots de plusieurs candidats, à condition de ne mélanger ni leurs dossiers ni leurs sessions. Le gestionnaire ne cite que depuis le texte verbatim conservé, et contrôle que chaque extrait cité y figure ; un résumé produit par un outil ou un agent ne constitue pas une source. Le gestionnaire reste responsable du résultat.
+Règles : préférer un script déterministe à un exécutant pour les tâches purement mécaniques (extraction de texte de PDF, indexation des références) ; chaque exécutant écrit dans un sous-dossier disjoint de la session et ne lit que les chemins de sa consigne ; il ne sélectionne, n’interprète ni ne résume. L’isolation par candidat vise le contenu : un exécutant technique sans contenu à interpréter peut traiter des lots de plusieurs candidats, à condition de ne mélanger ni leurs dossiers ni leurs sessions. Le gestionnaire ne cite que depuis le texte verbatim conservé, et contrôle que chaque extrait cité y figure ; un résumé produit par un outil ou un agent ne constitue pas une source. Le gestionnaire reste responsable du résultat.
 
 Réserver une éventuelle escalade de modèle aux difficultés précises et non résolues. Ne pas lancer automatiquement un modèle plus coûteux pour l’ensemble du site. Identifier d’abord ce qui manque et réduire le lot ou laisser le point explicitement incertain.
 
@@ -61,27 +61,22 @@ Renseigner dans le manifeste `agent_responsable`, `agents` (identifiant, candida
 
 Lire la dernière session locale et les fiches existantes avant de naviguer. Dans un nouveau clone, les bruts sont absents : reconstruire la collecte depuis les sources publiques et les références des fiches ; ne pas prendre cette absence locale pour un retrait de mesure.
 
-## 1 bis. Détecter ce qui a changé
+## 1 bis. Juger ce qui a changé
 
-Avant de naviguer, lancer depuis la racine :
+Pour chaque mesure existante, avant toute nouvelle recherche : relire la source citée (liens de la fiche et tableau d’URL du README ; texte actuel obtenu directement ou par un exécutant technique en verbatim) et la comparer à la fiche — proposition attribuée, extrait, chiffres, périmètre, conditions, calendrier. L’agent de gestion du candidat classe la mesure et motive sa décision dans l’historique de la fiche :
 
-```sh
-python3 scripts/verifier_sources.py jean-luc-melenchon
-```
+- **inchangée** : mettre à jour `dernier_controle_presence` ; aucune relecture approfondie ni recherche.
+- **changement marginal** (reformulation, mise en page, date, ordre des éléments, précision sans effet sur le sens) : mettre à jour `dernier_controle_presence` et l’historique ; ne pas relancer la recherche indépendante ni la consolidation.
+- **changement de fond** (montant, périmètre, condition, calendrier, ajout ou retrait d’un élément) : mettre à jour la fiche en gardant l’ancienne formulation dans l’historique ; ne relancer la recherche indépendante et les contrôles par domaine que pour les éléments touchés, en réutilisant les références existantes.
+- **source inaccessible** : signaler, ne pas conclure à un retrait.
 
-Le script lit `candidats/<identifiant>/suivi-sources.json`, récupère chaque URL, normalise le texte visible, compare son empreinte à celle du registre et classe chaque source : `inchangee`, `modifiee`, `nouvelle` (absente du registre), `inaccessible`. Il n’écrit dans le registre qu’avec `--ecrire`, après examen. Utiliser le résultat ainsi :
-
-- `inchangee` : ne pas relire ni réextraire ; mettre à jour `dernier_controle_presence` des mesures qui s’appuient sur cette source et consigner « source inchangée à la date du contrôle » dans leur historique.
-- `modifiee` : réextraire seulement cette source, comparer à l’extraction précédente et ne retravailler (recherche indépendante comprise) que les mesures dont le contenu change.
-- `nouvelle` ou `inaccessible` : traiter comme dans la section 2 ; une page inaccessible ne prouve aucun retrait.
-
-Limites à rappeler dans le bilan : l’empreinte du texte visible peut changer sans modification de fond (bandeaux, dates, listes d’articles) et ne change pas lorsque le contenu est servi dynamiquement ou dans un PDF non relu ; l’absence de changement détectée n’est pas une preuve d’identité. Les index de rubriques restent contrôlés pour repérer de nouveaux documents. Sans accès réseau, signaler que la détection n’a pas pu être faite.
+C’est un jugement, pas un calcul : aucune empreinte ni aucun script ne tranche. En cas de doute entre marginal et de fond, traiter comme de fond. Si des bruts d’une session locale précédente existent, ils peuvent faciliter la comparaison ; dans un nouveau clone, comparer à la fiche. Contrôler aussi les index de rubriques pour repérer de nouveaux documents, et consigner dans le manifeste le classement de chaque mesure. Sans accès réseau, signaler que ce contrôle n’a pas pu être fait.
 
 ## 2. Collecter avant de consolider
 
 Partir du tableau des URL de collecte ciblée du README et des sites officiels. Consulter en priorité les index et documents déjà connus ; parcourir de nouveau l’ensemble du site seulement si nécessaire. Lors de chaque session, vérifier aussi les index de rubriques pour découvrir de nouveaux documents ; ne pas limiter la collecte aux seules URL mémorisées. Actualiser le tableau avec les nouveaux liens, leur utilité et le résultat du contrôle. Inventorier programme actuel, documents du parti pertinent, plans, discours et interviews accessibles. Consulter les sources originales. Distinguer pages découvertes et pages effectivement lues ; séparer documents actuels, éditions anciennes et dates inconnues.
 
-Constituer un premier lot utile et limité, puis élargir selon le besoin. Ne pas revendiquer un rafraîchissement complet sur la base de ce lot ; inscrire les rubriques restantes dans le manifeste. Pour une mise à jour, prioriser les nouveaux documents et les sources des mesures existantes. Si disponibles, comparer empreintes, dates ou versions ; leur absence ne prouve pas qu’une page n’a pas changé.
+Constituer un premier lot utile et limité, puis élargir selon le besoin. Ne pas revendiquer un rafraîchissement complet sur la base de ce lot ; inscrire les rubriques restantes dans le manifeste. Pour une mise à jour, prioriser les nouveaux documents et les sources des mesures existantes. Si disponibles, tenir compte des dates ou versions affichées ; leur absence ne prouve pas qu’une page n’a pas changé, d’où la relecture de la section 1 bis.
 
 Dans `manifest.json`, ajouter une entrée par source dans `sources` avec :
 

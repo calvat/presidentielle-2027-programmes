@@ -37,7 +37,7 @@ Nature : proposition de parti (La France insoumise) présentée comme plan d’i
 
 - Première observation par le projet : 2026-10-15, plan en HTML et en PDF consultés sur le site de campagne.
 - Dernière observation confirmant la présence : 2026-10-15 (mêmes sources).
-- Dernier contrôle de présence : 2026-10-15, mesure retrouvée dans le PDF (octets inchangés entre deux lectures du même jour) ; page HTML et PDF enregistrés dans `candidats/jean-luc-melenchon/suivi-sources.json`.
+- Dernier contrôle de présence : 2026-10-15, mesure retrouvée dans le PDF ; page HTML et PDF relus.
 - Statut : documentée.
 - Date de première annonce : non établie. L’en-tête HTTP `Last-Modified` du PDF indique le 2026-09-28 (indice technique de mise en ligne, pas une date d’annonce) ; le plan ne porte pas de date de publication.
 - Le même site renvoie à une édition 2025 de *L’Avenir en commun* et à des livrets 2022, non lus ici : leur contenu n’est pas attribué à 2027.

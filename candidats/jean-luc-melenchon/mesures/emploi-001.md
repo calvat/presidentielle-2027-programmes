@@ -38,7 +38,7 @@ Nature : proposition personnelle du candidat, exprimée dans un discours de camp
 - Date d’annonce établie : 2026-06-07 (date du discours).
 - Première observation par le projet : 2026-10-15, transcription publiée sur le blog du candidat.
 - Dernière observation confirmant la présence : 2026-10-15.
-- Dernier contrôle de présence : 2026-10-15 ; page enregistrée dans `candidats/jean-luc-melenchon/suivi-sources.json`.
+- Dernier contrôle de présence : 2026-10-15 ; page relue.
 - Statut : documentée.
 - Valeurs divergentes rapportées par des sites tiers (1 600 € ou 1 800 € nets selon leurs pages) : non vérifiées dans des sources du candidat, non retenues.
 - Contexte historique, non repris pour 2027 : un billet de 2012 du même blog rapporte une proposition de Smic à 1 700 € brut puis 1 700 € net sur la durée du quinquennat (position antérieure, avec brut et net précisés ; non rattachée à la proposition de 2026).

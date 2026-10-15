@@ -36,7 +36,7 @@ Renseigner au moins le site officiel de campagne. Distinguer site du candidat, s
 | URL directe | Type ou domaine | Utilité pour la collecte | Dernier contrôle | État ou limites |
 | --- | --- | --- | --- | --- |
 
-Le registre machine `suivi-sources.json` du dossier (URL, empreinte du texte, dernier contrôle) alimente `scripts/verifier_sources.py` : le tenir aligné avec ce tableau. Ajouter les pages d’entrée et documents effectivement repérés : programme, listes de plans, rubriques discours et interviews, documents budgétaires. Indiquer les pages historiques et les liens inaccessibles. Les agents consultent d’abord ces URL ; ce répertoire n’est pas une liste fermée et doit évoluer avec le site.
+Ajouter les pages d’entrée et documents effectivement repérés : programme, listes de plans, rubriques discours et interviews, documents budgétaires. Indiquer les pages historiques et les liens inaccessibles. Les agents consultent d’abord ces URL ; ce répertoire n’est pas une liste fermée et doit évoluer avec le site.
 
 ## Couverture
 
